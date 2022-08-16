@@ -1,0 +1,22 @@
+{
+    "db_url": "mongodb+srv://kaldtech:kaldtech@cluster0.oze71.mongodb.net/Kaldari",
+    "jwt_token_secret": "Kaldari-realestate-Key",
+    "refresh_jwt_token_secret": "Kaldari-realestate-Key",
+    "Winston": {
+        "level": "debug"
+    },
+    "nodeMail": {
+        "mail": "tech@kaldtech.com",
+        "password": "gthcslzicssvpsis",
+        "service": "gmail"
+    },
+    "timeZone": "Asia/Calcutta",
+    "aws": {
+        "accessKeyId": "AKIAZ4W7ABXHJ7NLDYXK",
+        "secretAccessKey": "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",
+        "region": "ap-south-1",
+        "bucket_name": "kaldaris3",
+        "bucket_url":"https://kaldaris3.s3.ap-south-1.amazonaws.com"
+    },
+    "fcmKey": ""
+}
