@@ -1,1 +1,1 @@
-export * as userController from './user/index'
+export * as authenticationController from './Auth/authentication'

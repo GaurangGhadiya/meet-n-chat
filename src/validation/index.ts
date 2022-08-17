@@ -1,1 +1,1 @@
-export * from './user'
+export * as userValidation from './user'

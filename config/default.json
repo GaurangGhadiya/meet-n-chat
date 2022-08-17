@@ -1,5 +1,5 @@
 {
-    "db_url": "mongodb+srv://jatin_dharaiya:ayaornflu8cwd2w3@cluster0.vncpr.mongodb.net/Meetup?retryWrites=true&w=majority",
+    "db_url": "mongodb+srv://Gaurang_Ghadiya:PPRcCqEuCIgdmm7c@cluster0.vncpr.mongodb.net/Meetup?retryWrites=true&w=majority",
     "jwt_token_secret": "Kaldari-realestate-Key",
     "refresh_jwt_token_secret": "Kaldari-realestate-Key",
     "Winston": {
