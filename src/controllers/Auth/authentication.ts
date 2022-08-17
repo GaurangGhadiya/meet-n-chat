@@ -139,9 +139,9 @@ export const reset_password = async (req: Request, res: Response) => {
     reqInfo(req)
     let body = req.body,
         authToken = 0,
-        id = body.id,
-        otp = body?.otp
-    delete body.otp
+        id = body.id
+        // otp = body?.otp
+    // delete body.otp
     try {
         const salt = await bcryptjs.genSaltSync(10)
         const hashPassword = await bcryptjs.hash(body.password, salt)
@@ -156,8 +156,11 @@ export const reset_password = async (req: Request, res: Response) => {
             }
         }
         body.authToken = authToken
-        body.otp = 0
-        let response = await userModel.findOneAndUpdate({ _id: ObjectId(id), isActive: true, otp: otp }, body, { new: true })
+        // body.otp = 0
+        
+        let response = await userModel.findOneAndUpdate({ _id: ObjectId(id), isActive: true }, body,{new: true})
+        console.log("response",response);
+        
         if (response) {
             return res.status(200).json(new apiResponse(200, responseMessage?.resetPasswordSuccess, { action: "please go to login page" }, {}))
         }
@@ -174,6 +177,8 @@ export const otp_verification = async (req: Request, res: Response) => {
     try {
         body.isActive = true
         let data = await userModel.findOneAndUpdate(body, { otp: null, isEmailVerified: true, authToken: body.otp, lastLogin: new Date() }, { new: true });
+        console.log("data veri",data);
+        
         if (!data) return res.status(400).json(new apiResponse(400, responseMessage?.invalidOTP, {}, {}))
         const token = jwt.sign({
             _id: data._id,
